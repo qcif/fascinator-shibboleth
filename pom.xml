@@ -22,13 +22,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>fascinator-shibboleth</groupId>
+    <groupId>au.com.redboxresearchdata</groupId>
     <artifactId>fascinator-shibboleth</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <fascinator.version>1.1.5-SNAPSHOT</fascinator.version>
+        <fascinator.version>1.2-SNAPSHOT</fascinator.version>
         <icons.dir>target/icons</icons.dir>
     </properties>
 
@@ -38,6 +38,13 @@
             <artifactId>fascinator-portal</artifactId>
             <version>${fascinator.version}</version>
             <type>warpath</type>
+            <scope>provided</scope>
+        </dependency>
+	    <dependency>
+            <groupId>com.googlecode.the-fascinator</groupId>
+            <artifactId>fascinator-common</artifactId>
+            <version>${fascinator.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.googlecode.the-fascinator</groupId>
@@ -45,6 +52,7 @@
             <version>${fascinator.version}</version>
             <classifier>classes</classifier>
             <type>jar</type>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.mortbay.jetty</groupId>
@@ -115,6 +123,51 @@
                 </executions>
             </plugin>
         </plugins>
+        <pluginManagement>
+        	<plugins>
+        		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        		<plugin>
+        			<groupId>org.eclipse.m2e</groupId>
+        			<artifactId>lifecycle-mapping</artifactId>
+        			<version>1.0.0</version>
+        			<configuration>
+        				<lifecycleMappingMetadata>
+        					<pluginExecutions>
+        						<pluginExecution>
+        							<pluginExecutionFilter>
+        								<groupId>org.appfuse</groupId>
+        								<artifactId>
+        									maven-warpath-plugin
+        								</artifactId>
+        								<versionRange>
+        									[2.0.2,)
+        								</versionRange>
+        								<goals>
+        									<goal>add-classes</goal>
+        								</goals>
+        							</pluginExecutionFilter>
+        							<action>
+        								<ignore></ignore>
+        							</action>
+        						</pluginExecution>
+        					</pluginExecutions>
+        				</lifecycleMappingMetadata>
+        			</configuration>
+        		</plugin>
+        	</plugins>
+        </pluginManagement>
     </build>
 
+<distributionManagement>
+		<snapshotRepository>
+			<id>redbox-nexus-snapshots</id>
+			<name>Redbox Nexus Snapshots</name>
+			<url>http://dev.redboxresearchdata.com.au/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>redbox-nexus-releases</id>
+			<name>Redbox Nexus Releases</name>
+			<url>http://dev.redboxresearchdata.com.au/nexus/content/repositories/releases/</url>
+		</repository>
+	</distributionManagement>
 </project>

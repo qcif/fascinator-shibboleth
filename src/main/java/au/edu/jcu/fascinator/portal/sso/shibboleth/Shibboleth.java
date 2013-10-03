@@ -61,8 +61,10 @@ public class Shibboleth implements SSOInterface {
 
     {
         try {
-            logger.debug(String.format("Resource Loader Path: %s", Velocity.getProperty(Velocity.FILE_RESOURCE_LOADER_PATH).toString()));
-            shibbolethTemplate = Velocity.getTemplate("shibboleth/interface.vm");
+        	if(Velocity.getProperty(Velocity.FILE_RESOURCE_LOADER_PATH) != null) {
+        		logger.debug(String.format("Resource Loader Path: %s", Velocity.getProperty(Velocity.FILE_RESOURCE_LOADER_PATH).toString()));
+        		shibbolethTemplate = Velocity.getTemplate("shibboleth/interface.vm");
+        	}
             JsonSimpleConfig config = new JsonSimpleConfig();
 
             SHIB_ATTRIBUTE_DELIMITER = config.getString(";", SHIBBOLETH_PLUGIN_ID, SHIBBOLETH_DELIMITER);
