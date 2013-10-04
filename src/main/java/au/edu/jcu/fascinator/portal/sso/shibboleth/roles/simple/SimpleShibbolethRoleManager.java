@@ -114,7 +114,7 @@ public class SimpleShibbolethRoleManager implements ShibbolethRoleManager {
                     }
                 }
                 logger.trace(String.format("Entry Count: %d Size: %d", entryCount, tmp.size()));
-                if (entryCount == tmp.size()) {
+                if (entryCount >= 1) {
                     toRet.add(role.toString());
                 }
             }
