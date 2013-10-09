@@ -27,7 +27,7 @@ import com.googlecode.fascinator.common.authentication.GenericUser;
  * @author Nigel Bajema
  */
 public class ShibbolethUser extends GenericUser {
-    private String commonName;
+    public String commonName;
 
     public ShibbolethUser(String username, String commonName) {
         setUsername(username);
@@ -38,4 +38,6 @@ public class ShibbolethUser extends GenericUser {
     public String realName() {
         return commonName;
     }
+        
+    
 }
