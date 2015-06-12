@@ -28,7 +28,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <fascinator.version>1.2-SNAPSHOT</fascinator.version>
         <icons.dir>target/icons</icons.dir>
     </properties>
 
@@ -36,20 +35,20 @@
         <dependency>
             <groupId>com.googlecode.the-fascinator</groupId>
             <artifactId>fascinator-portal</artifactId>
-            <version>${fascinator.version}</version>
+            <version>1.3-SNAPSHOT</version>
             <type>warpath</type>
             <scope>provided</scope>
         </dependency>
 	    <dependency>
             <groupId>com.googlecode.the-fascinator</groupId>
             <artifactId>fascinator-common</artifactId>
-            <version>${fascinator.version}</version>
+            <version>1.3-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.googlecode.the-fascinator</groupId>
             <artifactId>fascinator-portal</artifactId>
-            <version>${fascinator.version}</version>
+            <version>1.3-SNAPSHOT</version>
             <classifier>classes</classifier>
             <type>jar</type>
             <scope>provided</scope>
@@ -158,16 +157,4 @@
         </pluginManagement>
     </build>
 
-<distributionManagement>
-		<snapshotRepository>
-			<id>redbox-nexus-snapshots</id>
-			<name>Redbox Nexus Snapshots</name>
-			<url>http://dev.redboxresearchdata.com.au/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-		<repository>
-			<id>redbox-nexus-releases</id>
-			<name>Redbox Nexus Releases</name>
-			<url>http://dev.redboxresearchdata.com.au/nexus/content/repositories/releases/</url>
-		</repository>
-	</distributionManagement>
 </project>
