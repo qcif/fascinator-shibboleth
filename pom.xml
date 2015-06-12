@@ -156,5 +156,7 @@
         	</plugins>
         </pluginManagement>
     </build>
-
+    <scm>
+	          <connection>scm:git:https://github.com/qcif/fascinator-shibboleth.git</connection>
+		   </scm>
 </project>
